@@ -7,19 +7,19 @@ print('Играем в крестики-нолики!')
 board = list(range(1,10))
 
 def draw_a_board(board):
-    print('-'*12)
+    print('-'*13)
     for i in range(3):
-        print('|', board[0+i*3],'|', board[1+i*3], '|', board[2+i*3], '|')
-        print('-'*12)
+        print(f'| {board[0+i*3]} | {board[1+i*3]} | {board[2+i*3]} |')
+        print('-'*13)
 
 def choice(tic_tac):
     flag = False
     while not flag:
-        player_index = input('Ваш ход, выберите цифру клетки ' + tic_tac + ' --> ')
+        player_index = input(f'Выберите цифру клетки {tic_tac} --> ')
         try:
-            player_index =int(player_index)
+            player_index = int(player_index)
         except:
-            print('Нажмите кнопку соответсвующую цифре в клетке')
+            print('Необходимо ввести цифру')
             continue
         if player_index >= 1 and player_index <= 9:
             if(str(board[player_index-1]) not in 'XO'):
@@ -28,7 +28,7 @@ def choice(tic_tac):
             else:
                 print('Здесь уже что-то стоит')
         else:
-            print('Попробуйте еще раз')
+            print('Введите цифру, сответствующую значению в какой-либо в клетке')
 
 def victory_check(board):
     victory = ((0,1,2),(3,4,5),(6,7,8),
@@ -40,7 +40,7 @@ def victory_check(board):
     return False
 
 def game(board):
-    counter =0
+    counter = 0
     vic = False
     while not vic:
         draw_a_board(board)
@@ -48,15 +48,15 @@ def game(board):
             choice('X')
         else:
             choice('0')
-        counter +=1
+        counter += 1
         if counter > 4:
-            tt_win = victory_check(board)
-            if tt_win:
-                print(tt_win,'Победил')
+            win = victory_check(board)
+            if win:
+                print(f'{win} победил')
                 vic = True
                 break
             if counter == 9:
                 print('Ничья!)')
                 break
-        draw_a_board(board)
+        #draw_a_board(board)
 game(board)
