@@ -1,7 +1,7 @@
 # Реализуйте RLE алгоритм: реализуйте модуль сжатия и восстановления данных.
 # Входные и выходные данные хранятся в отдельных текстовых файлах.
-#aaaaabbbcccc -> 5a3b4c
-#5a3b4c -> aaaaabbbcccc
+#Пример: aaaaabbbcccc -> 5a3b4c
+#        5a3b4c -> aaaaabbbcccc
 
 
 with open(r'compression.txt', 'r') as data:

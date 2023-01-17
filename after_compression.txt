@@ -1,2 +1,2 @@
-Data after string compression aaaaabbbcccc:
-5a3b4c
+Data after string compression aabbccddaaaa:
+2a2b2c2d4a
